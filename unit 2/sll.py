@@ -15,9 +15,9 @@ class SLL:
     def traverse(self):
         temp = self.head
         while temp:
-            print(temp.data, end=" -> ")
+            print(temp.data")
             temp = temp.next
-
+#main
 ll = SLL()
 ll.insert(10)
 ll.insert(20)
