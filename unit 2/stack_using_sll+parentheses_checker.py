@@ -1,13 +1,32 @@
-def is_balanced(s):
+def check(s):
     stack = []
-    pairs = {')':'(', '}':'{', ']':'['}
-
-    for ch in s:
-        if ch in "({[":
-            stack.append(ch)
+    for i in s:
+        # if opening bracket
+        if i == '(' or i == '{' or i == '[':
+            stack.append(i)
         else:
-            if not stack or stack.pop() != pairs[ch]:
+            # if stack empty
+            if len(stack) == 0:
                 return False
-    return len(stack) == 0
-
-print(is_balanced("(){}[]"))
+            x = stack.pop()
+            # checking
+            if i == ')' and x != '(':
+                return False
+            if i == '}' and x != '{':
+                return False
+            if i == ']' and x != '[':
+                return False
+    # final check
+    if len(stack) == 0:
+        return True
+    else:
+        return False
+    
+# main
+str1 = "(){}[]"
+print("string is:", str1)
+res = check(str1)
+if res == True:
+    print("Balanced")
+else:
+    print("Not Balanced")
