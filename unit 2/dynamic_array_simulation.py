@@ -12,7 +12,7 @@ class DynamicArray:
     def pop(self):
         if self.data:
             self.data.pop()
-
+#main
 arr = DynamicArray()
 arr.append(1)
 arr.append(2)
